@@ -10,7 +10,8 @@ import {
   StyleSheet,
   FlatList,
   Linking,
-  ListView
+  ListView,
+  AsyncStorage
 } from 'react-native';
 
 
@@ -36,6 +37,11 @@ const ArtistsScreen = (props) => {
     headerTitleStyle: {
       fontWeight: 'bold',
     },
+  };
+
+  _signOutAsync = async () => {
+    await AsyncStorage.clear();
+    props.navigation.navigate('Auth');
   };
 
   function Card1(){
@@ -85,7 +91,18 @@ const ArtistsScreen = (props) => {
   }
 
   return (
-    
+    <View style={{ flex: 1 }}>
+    <View style={{padding:10,flexDirection:'row',backgroundColor:"#0a0a09"}}>
+
+<Button
+         onPress={this._signOutAsync}
+         title = "Sign Out"
+         color = "black"
+         
+         style={{borderRadius:30}}
+         
+      />
+</View>
     <FlatList
       data={ artists }
       keyExtractor={ keyExtractor }
@@ -184,6 +201,7 @@ const ArtistsScreen = (props) => {
         );
       }}
     />
+    </View>
   );
 }
 
