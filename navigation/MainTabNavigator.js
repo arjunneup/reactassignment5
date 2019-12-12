@@ -8,7 +8,6 @@ import ArtistsScreen from '../screens/ArtistsScreen';
 import AboutScreen from '../screens/AboutScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
 
-
 const config = Platform.select({
   web: { headerMode: 'screen' },
   default: {},
@@ -99,6 +98,8 @@ FavoriteStack.navigationOptions = {
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-star' : 'md-star'} />
   ),
 };
+
+
 
 //about tab bar
 

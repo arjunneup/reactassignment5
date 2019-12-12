@@ -3,16 +3,21 @@ import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Container, Item, Form, Input, Button, Label } from "native-base";
 import { Ionicons } from '@expo/vector-icons';
 import firebase from 'firebase';
 import AppNavigator from './navigation/AppNavigator';
 
 export default function App(props) {
-  const [isLoadingComplete, setLoadingComplete] = useState(false);
+  const [isLoadingComplete, setLoadingComplete] = useState(true);
 
   var config = {
+    authDomain: "reactnativedb-431d4.firebaseapp.com",
+    apiKey: "AIzaSyAI-cFA45t0XtXjM5qncwwCkAWKD4D2t5w",
     databaseURL: "https://reactnativedb-431d4.firebaseio.com",
     projectId: "reactnativedb-431d4",
+    storageBucket: "reactnativedb-431d4.appspot.com",
+    messagingSenderId: "330024461659"
 };
 
 
@@ -69,3 +74,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+

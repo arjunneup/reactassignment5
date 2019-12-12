@@ -5,7 +5,7 @@ const LoginScreen = (props) => {{
  
   
     _signInAsync = async () => {
-        await AsyncStorage.setItem('userToken', 'abc');
+        // await AsyncStorage.setItem('userToken', 'abc');
         props.navigation.navigate('Main');
       };
 
@@ -33,12 +33,20 @@ const LoginScreen = (props) => {{
           secureTextEntry={true}
           style={styles.input}
         />
-        
-        <Button
+
+<Button
           title={'Login'}
           color="black"
          onPress={this._signInAsync}
         />
+        
+        <Button
+          title={'Sign Up'}
+          color="black"
+         //onPress={this}
+        />
+
+
       </View>
     );
   }
@@ -49,7 +57,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor:  '#000000',
+    backgroundColor:  '#ffffff',
   },
   input: {
     width: 200,
